@@ -8,9 +8,8 @@ import json
 from pyowm import OWM
 from pyowm.utils.config import get_default_config
 
-
-GOOGLE_API_KEY = 'AIzaSyCKqc__yNSlC-9IspRAZWxU7GskBv6-z-8'
-API_key = '27c674b1ce585ff4aea4fc73ac8b3d32'
+GOOGLE_API_KEY = ''
+API_key = ''
 
 url = f'https://www.googleapis.com/geolocation/v1/geolocate?key={GOOGLE_API_KEY}'
 data = {
