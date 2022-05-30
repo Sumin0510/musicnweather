@@ -2,6 +2,10 @@
 날씨n음악 자동으로 날씨 검색해주는 파트 - 현재 본인의 IP를 가져와서 그 지역의 날씨를 검색해요
 이하 전체 코드
 
+
+2022-05-30 PM 6:25 - 맑음/흐림/비/눈만 출력되게 코드 변경 완료
+
+
 import requests
 import googlemaps
 import json
@@ -37,4 +41,23 @@ w = obs.weather
 temperature = w.temp["temp"]-273.15
 now = round(temperature, 1)
 
-print('현재 날씨 : ', w.detailed_status, f'{now}도 입니다')
+wlist = ['맑음', '흐림', '비', '눈']
+
+if w.detailed_status in wlist:
+    print("현재 날씨 : ", w.detailed_status)
+
+else:
+    if '맑음' in w.detailed_status:
+        print("현재 날씨 : 맑음")
+
+    elif '흐림' in w.detailed_status:
+        print("현재 날씨 : 흐림")
+
+    elif '비' in w.detailed_status:
+        print("현재 날씨 : 비")
+
+    elif '눈' in w.detailed_status:
+        print("현재 날씨 : 눈")
+
+    else:
+        print("날씨에 따른 추천 음악 리스트를 찾을 수 없습니다")
